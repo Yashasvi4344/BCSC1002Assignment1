@@ -22,3 +22,11 @@ public class Library {
             this.booksThatAreCurrentlyAvailable[libraryIndex] = new Book();
         }
     }
+
+    public Book[] getBooksThatAreCurrentlyAvailable() {
+        return booksThatAreCurrentlyAvailable;
+    }
+
+    public void setBooksThatAreCurrentlyAvailable(Book[] booksThatAreCurrentlyAvailable) {
+        this.booksThatAreCurrentlyAvailable = booksThatAreCurrentlyAvailable;
+    }
