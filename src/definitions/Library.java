@@ -4,7 +4,4 @@
  *  Time: 3:50 PM
  *  File Name : Library.java
  * */
-package definitions;
-
-public class Library {
-}
+packag{}
