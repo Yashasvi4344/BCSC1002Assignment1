@@ -6,6 +6,8 @@
  * */
 package definitions;
 
+import java.util.Objects;
+
 public class Book {
     private final String bookName;
     private final String authorName;
@@ -37,7 +39,7 @@ public class Book {
         return authorName;
     }
 
-    public void setauthorName(String nameOfTheAuthorOfTheBook) {
+    public void setauthorName(String authorName) {
         this.authorName = authorName;
     }
 
@@ -55,10 +57,26 @@ public class Book {
                 "Author Name: " + authorName() + ", " +
                 "13-Digit ISBN Number: " + getthirteenDigitISBNNumberOfTheBook() + ".";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(getbookName(), book.getbookName()) &&
+                Objects.equals(getauthorName(), book.authorName()) &&
+                Objects.equals(getthirteenDigitISBNNumberOfTheBook(), book.getthirteenDigitISBNNumberOfTheBook());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getbookName(), getauthorName(), getthirteenDigitISBNNumberOfTheBook());
+    }
 }
 
 
 
 
-}
+
+
 
