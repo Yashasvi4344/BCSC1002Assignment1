@@ -5,6 +5,8 @@
  *  File Name : Student.java
  * */
 package definitions;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class Student {
     public class Student {
@@ -64,4 +66,17 @@ public class Student {
     public void setNamesOfTheBooksIssuedByTheStudent(Book[] namesOfTheBooksIssuedByTheStudent) {
         this.namesOfTheBooksIssuedByTheStudent = namesOfTheBooksIssuedByTheStudent;
     }
+}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return getUniversityRollNumberOfTheStudent() == student.getUniversityRollNumberOfTheStudent() &&
+                getNumberOfBooksIssuedByTheStudent() == student.getNumberOfBooksIssuedByTheStudent() &&
+                Objects.equals(getNameOfTheStudent(), student.getNameOfTheStudent()) &&
+                Arrays.equals(getNamesOfTheBooksIssuedByTheStudent(), student.getNamesOfTheBooksIssuedByTheStudent());
+    }
+
 
