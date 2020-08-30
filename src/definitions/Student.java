@@ -94,21 +94,62 @@ public class Student {
         return result;
     }
 
-    @param
-    bookIssuingIndex The
-    index where
-    the book
-    is issueing.
-    @param
-    bookName The
-    name of
-    the book
-    which is
-    issuing .
+
+    /**
+     * @namo bookIssuingIndex The
+     * index where
+     * the book
+     * is issueing.
+     **/
 
     public void issueBooksToStudents(int bookIssuingIndex, String bookName) {
         namesOfTheBooksIssuedByTheStudent[bookIssuingIndex].setNameOfTheBook(bookName);
     }
+
+    /**
+     * This method will return the Book which the student has issued.
+     *
+     * @return It will return Boolean value, if return will be successful then it will return true else false.
+     * @namo bookName The name of the book which is used to be returned.
+     */
+
+
+    public boolean returnBook(String bookName) {
+        boolean returnSuccessful = false;
+        int returnBookIndex = 0;
+        for (int tempIndex = 0; tempIndex < MAXIMUM_BOOKS_STUDENT_CAN_ISSUE; tempIndex++) {
+            if (bookName.equals(namesOfTheBooksIssuedByTheStudent[tempIndex].getNameOfTheBook())) {
+                returnSuccessful = true;
+                returnBookIndex = tempIndex;
+                setNumberOfBooksIssuedByTheStudent(getNumberOfBooksIssuedByTheStudent() - 1);
+                break;
+            }
+        }
+        if (returnSuccessful) {
+            namesOfTheBooksIssuedByTheStudent[returnBookIndex].setNameOfTheBook(null);
+        } else {
+            System.out.println("Please Enter the correct book name.");
+        }
+        return returnSuccessful;
+    }
+
+    /**
+     * This method will show all the books which is issued by the Student.
+     */
+    public void showIssuedBooksByStudent() {
+        if (getNumberOfBooksIssuedByTheStudent() == 0) {
+            System.out.println("Sorry, you haven't issued any book yet.");
+        } else {
+            System.out.println("These are the books issued by you: ");
+            for (int issuedBookIndex = 0; issuedBookIndex < MAXIMUM_BOOKS_STUDENT_CAN_ISSUE; issuedBookIndex++) {
+                if (namesOfTheBooksIssuedByTheStudent[issuedBookIndex].getNameOfTheBook() != null) {
+                    System.out.print(namesOfTheBooksIssuedByTheStudent[issuedBookIndex].getNameOfTheBook() + (issuedBookIndex < getNumberOfBooksIssuedByTheStudent() - 1 ? ", " : ".\n"));
+                }
+            }
+        }
+    }
+}
+
 
 
 
