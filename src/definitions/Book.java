@@ -16,6 +16,14 @@ public class Book {
         this.authorName = authorName;
         this.thirteenDigitISBNNumberOfBook = thirteenDigitISBNNumberOfBook;
     }
+
+}
+
+    public Book() {
+        this.bookName = null;
+        this.authorName = null;
+        this.thirteenDigitISBNNumberOfBook = null;
+    }
 }
 
 
