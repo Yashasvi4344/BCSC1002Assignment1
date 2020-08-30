@@ -7,6 +7,8 @@
 
 package definitions;
 
+import java.util.Arrays;
+
 public class Library {
     private static final int MAXIMUM_BOOKS_IN_LIBRARY = 5;
     private final Book[] booksThatAreCurrentlyAvailable;
@@ -29,4 +31,9 @@ public class Library {
 
     public void setBooksThatAreCurrentlyAvailable(Book[] booksThatAreCurrentlyAvailable) {
         this.booksThatAreCurrentlyAvailable = booksThatAreCurrentlyAvailable;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(booksThatAreCurrentlyAvailable);
     }
