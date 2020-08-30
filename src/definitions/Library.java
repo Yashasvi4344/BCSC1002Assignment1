@@ -9,5 +9,9 @@ package definitions;
 
 public class Library {
     private static final int MAXIMUM_BOOKS_IN_LIBRARY = 5;
-    private Book[] booksThatAreCurrentlyAvailable;
+    private final Book[] booksThatAreCurrentlyAvailable;
 }
+
+    public Library(Book[] booksThatAreCurrentlyAvailable) {
+        this.booksThatAreCurrentlyAvailable = booksThatAreCurrentlyAvailable;
+    }
