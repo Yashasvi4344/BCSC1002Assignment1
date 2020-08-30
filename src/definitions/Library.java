@@ -4,4 +4,10 @@
  *  Time: 3:50 PM
  *  File Name : Library.java
  * */
-packag{}
+
+package definitions;
+
+public class Library {
+    private static final int MAXIMUM_BOOKS_IN_LIBRARY = 5;
+    private Book[] booksThatAreCurrentlyAvailable;
+}
