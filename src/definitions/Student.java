@@ -94,4 +94,21 @@ public class Student {
         return result;
     }
 
+    @param
+    bookIssuingIndex The
+    index where
+    the book
+    is issueing.
+    @param
+    bookName The
+    name of
+    the book
+    which is
+    issuing .
+
+    public void issueBooksToStudents(int bookIssuingIndex, String bookName) {
+        namesOfTheBooksIssuedByTheStudent[bookIssuingIndex].setNameOfTheBook(bookName);
+    }
+
+
 
